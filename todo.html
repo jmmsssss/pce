@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('gold_bg.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-center min-h-screen relative">
+
+  <!-- Overlay blur -->
+  <div class="absolute inset-0 bg-black/10 backdrop-blur-md"></div>
+
+  <!-- To-Do List Container -->
+  <div class="relative z-10 w-full max-w-2xl bg-white/10 backdrop-blur-xl shadow-2xl rounded-3xl p-8 my-12 space-y-6 border border-amber-300">
+
+    <h1 class="text-3xl font-sans font-bold text-center text-yellow-600">
+      📝 To-Do List
+    </h1>
+
+    <!-- Input section -->
+    <div class="flex flex-col sm:flex-row gap-3">
+      <input id="todoName" type="text" placeholder="Nama Todo"
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-800 placeholder-gray-400 bg-white/80 backdrop-blur-sm">
+      <input id="todoDesc" type="text" placeholder="Deskripsi Todo"
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-800 placeholder-gray-400 bg-white/80 backdrop-blur-sm">
+      <button id="addBtn"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-5 py-2 rounded-lg shadow transition-transform hover:scale-105">
+        Tambah
+      </button>
+    </div>
+
+    <!-- Search section -->
+    <div>
+      <input id="search" type="text" placeholder="🔍 Cari todo..."
+        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-800 placeholder-gray-400 bg-white/80 backdrop-blur-sm">
+    </div>
+
+    <!-- Todo list -->
+     <hr><ul id="todoList" class="space-y-3"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
